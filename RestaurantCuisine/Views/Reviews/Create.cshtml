@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RestaurantCuisine.Models.Review
+
+<h4>Add a new review</h4>
+
+<p><strong>NOTE:</strong> You need to have at least one restaurant before you can add an review!</p>
+<p>Go to @Html.ActionLink("this page", "Create", "Restaurants") to create a cuisine.</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Author)
+  <p>@Html.TextBoxFor(model => model.Author)</p>
+
+  @Html.LabelFor(model => model.Title)
+  <p>@Html.TextBoxFor(model => model.Title)</p>
+
+  @Html.LabelFor(model => model.Body)
+  <p>@Html.TextBoxFor(model => model.Body)</p>
+
+  @Html.LabelFor(model => model.Restaurant) <span>&nbsp;</span>
+  @Html.DropDownList("RestaurantId") <span>&nbsp;</span>
+  <p></p>
+  <p><input type="submit" value="Add new review" class="btn btn-default" /></p>
+}
+<p>@Html.ActionLink("Show all reviews", "Index")</p>
