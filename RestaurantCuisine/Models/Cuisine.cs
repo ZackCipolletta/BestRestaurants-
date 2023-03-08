@@ -1,6 +1,4 @@
-
 using System.Collections.Generic;
-
 namespace RestaurantCuisine.Models
 {
   public class Cuisine
