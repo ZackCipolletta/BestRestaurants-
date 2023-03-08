@@ -8,3 +8,4 @@ namespace RestaurantCuisine.Models
     public List<Restaurant> Restaurants { get; set; }
   }
 }
+
