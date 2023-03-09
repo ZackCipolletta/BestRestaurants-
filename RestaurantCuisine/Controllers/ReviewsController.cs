@@ -39,7 +39,7 @@ namespace RestaurantCuisine.Controllers
             }
             _db.Reviews.Add(review);
             _db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Details", "Restaurants", new { id=review.RestaurantId });
         }
 
         public ActionResult Details(int id)
