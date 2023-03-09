@@ -12,6 +12,14 @@
 } 
 else
 {
+  @using (Html.BeginForm("Find", "Restaurants", "post"))
+{
+  @Html.Label("queryString")
+  <p>@Html.TextBox("queryString")</p>
+  <p></p>
+  <p><input type="submit" value="search for a restaurant" class="btn btn-default" /></p>
+}
+
   <ul>
     @foreach (Restaurant restaurant in Model)
     {

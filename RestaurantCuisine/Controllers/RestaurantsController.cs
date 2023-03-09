@@ -30,6 +30,15 @@ namespace RestaurantCuisine.Controllers
       return View();
     }
 
+
+    [HttpPost]
+    public ActionResult Find(string queryString)
+    {
+      List<Restaurant> model = _db.Restaurants.Include(restaurant => restaurant.Cuisine).Where(model => model.Name.Contains(queryString)).ToList();
+      return View("Index", model);
+    }
+
+
     [HttpPost]
     public ActionResult Create(Restaurant restaurant)
     {
