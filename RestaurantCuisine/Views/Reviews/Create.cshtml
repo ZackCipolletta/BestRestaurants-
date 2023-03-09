@@ -14,11 +14,22 @@
   @Html.LabelFor(model => model.Author)
   <p>@Html.TextBoxFor(model => model.Author)</p>
 
+  <p>@Html.DropDownListFor(model => model.Stars, new List<SelectListItem>
+    {
+      new SelectListItem {Text="⭐", Value="1"},
+      new SelectListItem {Text="⭐⭐", Value="2"},
+      new SelectListItem {Text="⭐⭐⭐", Value="3"},
+      new SelectListItem {Text="⭐⭐⭐⭐", Value="4"},
+      new SelectListItem {Text="⭐⭐⭐⭐⭐", Value="5"},
+    }, "Star rating:")
+  </p>
+
   @Html.LabelFor(model => model.Title)
   <p>@Html.TextBoxFor(model => model.Title)</p>
 
   @Html.LabelFor(model => model.Body)
   <p>@Html.TextBoxFor(model => model.Body)</p>
+
 
   @Html.LabelFor(model => model.Restaurant) <span>&nbsp;</span>
   @Html.DropDownList("RestaurantId") <span>&nbsp;</span>

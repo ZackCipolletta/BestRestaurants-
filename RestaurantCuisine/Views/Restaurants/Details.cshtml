@@ -20,6 +20,9 @@
   @foreach(Review review in Model.Reviews)
   {
     <li class="review-card">
+      <div>@for (int i=0; i < review.Stars; i++) {
+        <span>⭐</span>
+      }</div>
       <div class="review-title">@Html.DisplayFor(model => review.Title)</div>
       <div class="review-author">by @Html.DisplayFor(model => review.Author)</div>
       <div class="review-body">@Html.DisplayFor(model => review.Body)</div>
